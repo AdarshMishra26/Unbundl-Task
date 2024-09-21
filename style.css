@@ -3,119 +3,279 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-/* Body and Typography */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header Styling */
-header {
-    background-color: #fff2e5;
-    padding: 15px 0;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo h1 {
-    color: #e96a25;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.logo span {
-    color: #7a4a1e;
-    margin-left: 5px;
-}
-
-.logo p {
-    font-size: 10px;
-    color: #7a4a1e;
-    letter-spacing: 2px;
-    margin-top: -10px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #7a4a1e;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #e96a25;
-}
-
-.nav-right {
-    display: flex;
-    gap: 15px;
-}
-
-.appointment-btn, .help-btn {
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.appointment-btn {
-    background-color: #f68b25;
-    color: white;
-    font-weight: bold;
-}
-
-.appointment-btn:hover {
-    background-color: #e96a25;
-}
-
-.help-btn {
-    background-color: transparent;
-    border: 2px solid #f68b25;
-    color: #f68b25;
-    font-weight: bold;
-}
-
-.help-btn:hover {
-    background-color: #f68b25;
-    color: white;
-}
-
-/* Slider Section */
-.slider {
-    position: relative;
+    height: 100%;
     width: 100%;
-    max-height: 600px;
+    padding: auto;
+}
+
+/* <-------------- HEADER / NAVBAR ----------> */
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: #fff1e6;
     overflow: hidden;
 }
 
-.slides img {
+/* Navbar Styling */
+.navBar {
     width: 100%;
-    height: 600px;
-    object-fit: cover;
-    display: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-.slides img:first-child {
-    display: block;
+/* Logo Styling */
+.logo img {
+    height: 50px;
+    padding-left: 30px;
 }
+
+/* Menu Items (desktop view) */
+.items ul {
+    display: flex;
+    gap: 30px;
+}
+
+.items ul li {
+    list-style-type: none;
+}
+
+.items ul li a {
+    text-decoration: none;
+    color: #281a1a;
+}
+
+/* Buttons Styling (desktop view) */
+.btn {
+    height: 50px;
+    width: 300px;
+    padding: 0 60px 0 0;
+    margin: 0 60px 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnBook {
+    height: 40px;
+    width: 180px;
+    color: #ffffff;
+    background-color: #f8943f;
+    border: none;
+    border-radius: 50px;
+}
+
+.btnHlp {
+    height: 80%;
+    width: 80px;
+    border: 1px solid #f8943f;
+    background: none;
+    border-radius: 50px;
+}
+
+/* Hamburger Icon (hidden on desktop, visible on mobile) */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    padding-right: 30px;
+}
+
+/* Drawer Menu (hidden by default) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #281a1a;
+}
+
+.drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #fff1e6;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+.drawer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.drawer ul li {
+    padding: 16px 20px;
+}
+
+.drawer ul li a,
+.drawer ul li button {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #281a1a;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    display: block;
+    cursor: pointer;
+}
+
+/* Buttons in Drawer */
+.drawer .btnBook {
+    background-color: #f8943f;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.drawer .btnHlp {
+    border: 1px solid #f8943f;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Hide main menu and buttons on mobile */
+    .items,
+    .btn {
+        display: none;
+    }
+
+    /* Show hamburger icon on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Drawer menu */
+    .drawer {
+        display: block;
+    }
+}
+
+/* <-------------- HEALTH PLAN BANNER ----------> */
+
+.healthPlanBanner {
+    height: 550px;
+    background-color: #b5c1a6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Health Plan Text Section Styling */
+.healthPlanText {
+    width: 50%;
+    padding: 0px 0 0 60px;
+    font-size: 1.6rem;
+    color: #303030;
+}
+
+.healthPlanText h1 {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+}
+
+.healthPlanText p {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.healthPlanText h3 {
+    font-size: 1.5rem;
+}
+
+.healthPlanText button {
+    height: 40px;
+    width: 180px;
+    margin-top: 30px;
+    color: #ffffff;
+    background-color: #f8943f;
+    border: none;
+    border-radius: 50px;
+}
+
+/* Health Plan Image Section Styling */
+.healthPlanImage {
+    width: 40%;
+    height: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.healthPlanImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image retains its aspect ratio within the container */
+}
+/* Media Query for Mobile (Responsive Design) */
+@media (max-width: 768px) {
+    .healthPlanBanner {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .healthPlanText {
+        width: 100%;
+        padding: 0;
+        color: #303030;
+        font-size: 1.4rem;
+    }
+
+    .healthPlanText h1 {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .healthPlanText p {
+        font-size: 1rem;
+    }
+
+    .healthPlanText h3 {
+        font-size: 1.2rem;
+    }
+
+    .healthPlanText button {
+        width: 150px;
+        font-size: 1rem;
+    }
+
+    .healthPlanImage {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .healthPlanImage img {
+        width: 70%;
+        height: 60%;
+    }
+}
+
 
 /* FAQ Section */
 .faq-section {
@@ -756,231 +916,728 @@ header {
     }
   }
   
-  .container1 {
+  /* Main container */
+.contact-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.form-section {
-    background-color: #fff8f1;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+  }
+  
+  /* Form Section */
+  .contact-form {
+    width: 40%;
+    background-color: #fff1e6;
+    border-radius: 15px;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    flex: 1;
-    height: 765px;
-}
-
-.form-section h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.form-section p {
-    color: #999;
-    margin-bottom: 20px;
-}
-
-.form-section form {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-.form-section form input, .form-section form select {
-    padding: 10px;
+    align-items: flex-start; /* Align items to the left */
+  }
+  
+  /* Form Header */
+  .form-header {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 10px; /* Reduce gap between title and fields */
+  }
+  
+  .form-header h2 {
+    margin: 5px 0; /* Reduce gap between H2 tags */
+  }
+  
+  .form-header p {
+    margin-top: 5px; /* Reduce gap between H2 and paragraph */
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Form Fields */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .form-fields input {
+    width: 100%;
+    max-width: 300px;
+    height: 45px; /* Reduced height */
+    margin: 10px 0; /* Reduce gap between input fields */
+    padding: 0 20px;
+    background-color: #ffffff;
     border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 16px;
-}
-
-.form-section form button {
-    background-color: #ff9500;
-    color: #fff;
-    padding: 10px;
+    border-radius: 50px;
+    text-align: left; /* Align input text to the left */
+    box-sizing: border-box;
+  }
+  
+  .form-fields button {
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    margin: 20px 0;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 30px;
+    background-color: #f8943f;
+    color: #fff;
     font-size: 16px;
-    border-radius: 25px;
-}
-
-.form-section form button:hover {
-    background-color: #ff7f00;
-}
-
-.info-section {
-    flex: 2;
+    cursor: pointer;
+    align-self: flex-start; /* Align button to the left */
+  }
+  
+  /* Info Section */
+  .info-section {
+    width: 55%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.info-card {
+    justify-content: space-between;
+  }
+  
+  /* Safety Protocol Section */
+  .info-protocols {
     display: flex;
-    background-color: #f8f4ff;
+    background-color: #fbf5ff;
+    border-radius: 15px;
+    margin-bottom: 20px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.info-card h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.info-card p {
-    color: #999;
-    margin-bottom: 10px;
-}
-
-.info-card a {
-    color: #ff9500;
-    text-decoration: none;
-}
-
-.info-card a:hover {
-    text-decoration: underline;
-}
-
-.stats {
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  /* Protocol Text Section */
+  .protocol-text {
+    width: 60%;
     display: flex;
-    gap: 20px;
-}
-
-.stat-item {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.stat-item h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.stat-item p {
-    color: #999;
-    margin-bottom: 10px;
-}
-
-.stat-item a {
-    color: #ff9500;
-    text-decoration: none;
-}
-
-.stat-item a:hover {
-    text-decoration: underline;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stats {
-        flex-direction: column;
-    }
-}
-
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.blog-categories {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.blog-categories a {
+    text-align: left; /* Align text to the left */
+  }
+  
+  .protocol-text h1 {
+    margin: 0 0 5px; /* Reduced space between heading and subheading */
+    font-size: 28px;
+  }
+  
+  .protocol-text h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .protocol-text p {
+    margin: 5px 0 10px; /* Reduced space below paragraph */
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .protocol-text a {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #f8943f;
     text-decoration: none;
-    color: #666;
-    padding: 10px 20px;
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
-}
-
-.blog-categories a.active {
-    color: #f89a0d;
-    border-color: #f89a0d;
-}
-
-.blogs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 20px;
-}
-
-.blog-card {
-    background-color: #fff;
+    margin-top: 10px; /* Reduce gap between paragraph and link */
+  }
+  
+  .protocol-text a img {
+    margin-left: 10px;
+    width: 15px;
+  }
+  
+  /* Protocol Image */
+  .protocol-image {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .protocol-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Info Details Section */
+  .info-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .detail-box {
+    width: 48%;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .clinic-info {
+    background-color: #f5f8ff;
+  }
+  
+  .detail-box h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+  
+  .detail-box p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .detail-box img {
+    margin-bottom: 10px;
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .detail-box a {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #f8943f;
+    text-decoration: none;
+  }
+  
+  .detail-box a img {
+    margin-left: 10px;
+    width: 15px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1200px) {
+    .contact-form,
+    .info-section {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .info-protocols {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .protocol-text {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .protocol-image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .info-details {
+      flex-direction: column;
+    }
+  
+    .detail-box {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
 
-.blog-card:hover {
-    transform: translateY(-5px);
-}
 
-.blog-card img {
+/* <-------------- DENTAL SERVICE CONTAINER ----------> */
+
+/* Dental Services Container */
+.dentalServicesContainer {
     width: 100%;
     height: auto;
+    background-color: #f8f8f8;
+  }
+  
+  /* Content Section Styling */
+  .dentalServicesContent {
+    margin: 50px auto;
+    border-radius: 15px;
+    background-color: #fff1e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+  }
+  
+  .dentalServicesContent h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #303030;
+  }
+  
+  /* Card Container Styling */
+  .dentalCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Individual Dental Service Card */
+  .dentalCard {
+    width: 120px;
+    height: 80px;
+    margin: 20px;
     border-radius: 10px;
-}
-
-.blog-card h3 {
-    font-size: 18px;
-    margin: 15px 0;
-}
-
-.blog-card p {
-    font-size: 14px;
-    color: #666;
-    margin: 10px 0;
-}
-
-@media only screen and (max-width: 1024px) {
-    .blogs {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .dentalCard img {
+    height: 60%;
+    margin-bottom: 10px;
+  }
+  
+  .dentalCard a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  
+  /* Explore Section Styling */
+  .exploreTreatments {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .exploreTreatments a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+  
+  .exploreTreatments img {
+    height: 20px;
+  }
+  
+  /* Media Queries for Mobile (Responsive Design) */
+  @media (max-width: 768px) {
+    .dentalServicesContent h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #303030;
     }
-}
-
-@media only screen and (max-width: 768px) {
-    .blogs {
-        grid-template-columns: 1fr; /* One column for mobile */
+  
+    .dentalCard {
+      width: 140px;
+      height: 100px;
+      margin: 10px;
     }
-}
+  
+    .dentalCard a {
+      font-size: 0.8rem;
+    }
+  
+    .exploreTreatments {
+      display: flex;
+    }
+  
+    .exploreTreatments a {
+      margin-bottom: 10px;
+    }
+  }
 
-/* Pagination Arrows */
-.pagination {
+
+  /* <----------- BLOG CONTAINER -----------> */
+/* Main Blog Container */
+.blog-container {
+    background-color: #fff1e6;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Blog Header Section */
+  .blog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .blog-title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .blog-categories {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .blog-categories a {
+    text-decoration: none;
+    color: #878787;
+    margin-right: 5px;
+  }
+  
+  .blog-categories a span {
+    color: #f8943f;
+    font-weight: bold;
+  }
+  
+  /* Blog Cards Section */
+  .blog-content-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap; 
+  }
+  
+  /* Apply background box only to some cards */
+  .blog-card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 350px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+  
+  .blog-card.with-background {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-img {
+    height: 90px;
+    width: 90px;
+    margin-right: 20px;
+  }
+  
+  .blog-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .blog-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-text p span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .blog-text p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #878787;
+  }
+  
+  /* Explore More Section */
+  .explore-more {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .explore-more a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+  }
+  
+  .explore-more img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .blog-content-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+      gap: 20px;
+      justify-items: center;
+    }
+  
+    .blog-card {
+      width: 90%;
+    }
+  
+    .blog-img {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .blog-text p span {
+      font-size: 13px;
+    }
+  
+    .blog-text p {
+      font-size: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .blog-content-row {
+      grid-template-columns: 1fr; 
+    }
+  
+    .blog-card {
+      width: 100%;
+    }
+  }
+
+  
+/* CORPORATE TREUST BANNER */
+/* Main Banner Container */
+.corporate-trust-banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Increased size of the image container */
+  .banner-image-container {
+    width: 100%;
+    height: 60vh;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
-}
-
-.pagination span {
+    align-items: center;
+  }
+  
+  .banner-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Reduced the size of the content box */
+  .banner-content {
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0.5px #878787;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px; 
+  }
+  
+  .banner-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .banner-text h1 {
+    color: #f8943f;
+    font-size: 48px;
+  }
+  
+  .banner-text h3 {
     font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-text p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Trusted Companies Logos */
+  .trusted-companies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .company-logo {
+    width: 20vh;
+    height: 80px;
     margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .company-logo img {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  /* Book Appointment Button */
+  .btn-book {
+    background-color: #f8943f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-}
+    margin-top: 20px;
+  }
+  
+  .btn-book:hover {
+    background-color: #e07d2a;
+  }
+  
+  /* Explore More Section */
+  .explore-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .explore-more img {
+    height: 20px;
+    width: 20px;
+    margin: 0 10px;
+  }
+  
+  .explore-more a {
+    text-decoration: none;
+    color: #f8943f;
+    font-size: 16px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1200px) {
+    .banner-content {
+      width: 80%;
+    }
+  
+    .banner-image-container {
+      height: 55vh;
+    }
+  
+    .company-logo {
+      width: 18vh;
+    }
+  
+    .banner-text h1 {
+      font-size: 36px;
+    }
+  
+    .banner-text h3 {
+      font-size: 20px;
+    }
+  }
+  
+  /* Adjust the images for screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    .banner-content {
+      width: 90%;
+      padding: 15px;
+      margin-top: -80px;
+    }
+  
+    .banner-image-container {
+      height: 50vh;
+    }
+  
+    .company-logo {
+      width: 10vh;
+      height: 60px;
+    }
+  
+    .company-logo img {
+      height: 40px;
+    }
+  
+    .banner-text h1 {
+      font-size: 28px;
+    }
+  
+    .banner-text h3 {
+      font-size: 18px;
+    }
+  
+    .btn-book {
+      font-size: 14px;
+    }
+  
+    .explore-more img {
+      height: 18px;
+      width: 18px;
+    }
+  
+    .explore-more a {
+      font-size: 14px;
+    }
+  }
+  
+  /* For very small screens */
+  @media screen and (max-width: 500px) {
+    .banner-content {
+      width: 95%;
+      padding: 10px;
+      margin-top: -60px;
+    }
+  
+    .banner-image-container {
+      height: 40vh;
+    }
+  
+    .company-logo {
+      width: 10vh;
+      height: 50px;
+    }
+  
+    .company-logo img {
+      height: 35px;
+    }
+  
+    .banner-text h1 {
+      font-size: 24px;
+    }
+  
+    .banner-text h3 {
+      font-size: 16px;
+    }
+  
+    .btn-book {
+      font-size: 12px;
+    }
+  
+    .explore-more img {
+      height: 16px;
+      width: 16px;
+    }
+  
+    .explore-more a {
+      font-size: 12px;
+    }
+  }
+  

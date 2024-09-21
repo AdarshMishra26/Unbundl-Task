@@ -7,31 +7,67 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/clove logo1.png" alt="logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Treatments</a></li>
-            <li><a href="#">Dental Plans</a></li>
-            <li><a href="#">Our Doctors</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Find a Clinic</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="appointment-btn">Book Appointment</button>
-            <button class="help-btn">Help?</button>
-        </div>
-    </nav>
-</header>
+<!-- NAVBAR SECTION -->
+<header class="header">
+    <!-- Navbar -->
+    <div class="navBar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/clove logo1.png" alt="Clove Logo" />
+      </div>
 
-<div class="slider">
-    <div class="slides">
-        <img src="assets/img1.png" alt="Dental Health Plan">
-        <img src="assets/img2.png" alt="Advance Dental Health Plan">
+      <!-- Menu Items (visible on desktop, hidden on mobile) -->
+      <div class="items">
+        <ul>
+          <li><a href="#">Treatments</a></li>
+          <li><a href="#">Dental Plans</a></li>
+          <li><a href="#">Our Doctors</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Find a Clinic</a></li>
+        </ul>
+      </div>
+
+      <!-- Buttons (visible on desktop, hidden on mobile) -->
+      <div class="btn">
+        <button class="btnBook">Book Appointment</button>
+        <button class="btnHlp">&#9990; Help</button>
+      </div>
+
+      <!-- Hamburger Icon (visible on mobile only) -->
+      <div class="hamburger" id="hamburger">&#9776;</div>
     </div>
-</div>
+
+    <!-- Drawer Menu (hidden by default) -->
+    <nav class="drawer" id="drawer">
+      <div class="close-btn" id="closeDrawer">&times;</div>
+      <ul>
+        <li><a href="#">Treatments</a></li>
+        <li><a href="#">Dental Plans</a></li>
+        <li><a href="#">Our Doctors</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Find a Clinic</a></li>
+        <li><button class="btnBook">Book Appointment</button></li>
+        <li><button class="btnHlp">Help</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mainContent">
+    <!-- hHEALTH PLANNER BANNER -->
+    <div class="healthPlanBanner">
+      <!-- Text Section in Health Plan Banner -->
+      <div class="healthPlanText">
+        <h1>Advance Dental Health Plan</h1>
+        <p>Dental care worth &#8377; 8,000/-</p>
+        <h3>only at &#8377; 550/-</h3>
+        <button>Buy Now</button>
+      </div>
+
+      <!-- Image Section in Health Plan Banner -->
+      <div class="healthPlanImage">
+        <img src="assets/girl2.png" alt="Girl Image" />
+      </div>
+    </div>
 
 <div class="emi-section">
     <div class="emi-left">
@@ -117,57 +153,53 @@
     <a href="#" class="explore-treatments">Explore Treatments</a>
   </div>
 
-  <section class="form1">
-    <div class="container1">
-        <div class="form-section">
-            <h2>Expert Guidance for Healthy Smiles</h2>
-            <p>Contact Now</p>
-            <form>
-                <input type="text" placeholder="Name" value="Amit Rana">
-                <input type="text" placeholder="Mobile Number">
-                <select>
-                    <option>Select Concern</option>
-                </select>
-                <button type="submit">Book A Free Consultation</button>
-            </form>
-        </div>
-        <div class="info-section">
-            <div class="info-card">
-                
-                <div class="ab">
-                    <h3>10x Safety Protocols</h3>
-                    <p>with UV light sterilized equipment at all clinics</p>
-                </div>
-                <div class="bc"><img src="assets/girl.png"></div>
-                <a href="#">Learn More &rarr;</a>
-                
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                   <div class="fg"><h3>450+ Neighbourhood</h3>
-                    <p>Clinics Pan India</p></div> 
-                    <div class="kj">
-                        <img src="assets/Vector.png">
-                    </div>
-                    <a href="#">Locate Clinic near you</a>
-                </div>
-                <div class="stat-item">
-                   <div class="ol">
-                    <h3>1200+ Expert Doctors</h3>
-                    <p>Covering All Specialities</p>
-                   </div> 
-                   <div class="ki">
-                    <img src="assets/Group 51324.png">
-                   </div>
-                    <a href="#">Explore Dentists Nearby</a>
-                </div>
-            </div>
-        </div>
+  <!-- CONTACT SECTION -->
+<div class="contact-section">
+    <div class="contact-form">
+      <div class="form-header">
+        <h2>Expert Guidance for</h2>
+        <h2>Healthy Smiles</h2>
+        <p>Contact Now</p>
+      </div>
+      <div class="form-fields">
+        <input type="text" placeholder="Name" id="name" value="Amit Rana" /><br />
+        <input type="text" placeholder="Mobile Number" id="mobile-number" /><br />
+        <select>
+          <option>Select Concern</option>
+        </select><br />
+        <button>Book A Free Consultation</button>
+      </div>
     </div>
-
-
-
-</section>
+  
+    <div class="info-section">
+      <div class="info-protocols">
+        <div class="protocol-text">
+          <h1>10x Safety Protocols</h1>
+          <p>with UV light sterilized equipment at all clinics</p>
+          <a href="#">Learn More <img src="assets/Arrow 3.png" alt="arrow" /></a>
+        </div>
+        <div class="protocol-image">
+          <img src="assets/girl.png" alt="Doctor" />
+        </div>
+      </div>
+  
+      <div class="info-details">
+        <div class="detail-box clinic-info">
+          <h3>450+ Neighborhood Clinics</h3>
+          <p>Clinics Pan India</p>
+          <img src="assets/Vector.png" alt="Clinics" />
+          <a href="#">Locate Clinic Near You <img src="assets/Arrow 3.png" alt="arrow" /></a>
+        </div>
+        <div class="detail-box doctor-info">
+          <h3>1200+ Expert Doctors</h3>
+          <p>Covering All Specialties</p>
+          <img src="assets/Group 51324.png" alt="Doctors" />
+          <a href="#">Explore Dentists Nearby <img src="assets/Arrow 3.png" alt="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   
 <!--l Excellence Section -->
@@ -210,62 +242,165 @@
     </div>
 </section>
 
-<div class="container">
-    <h2>Journey Through Knowledge: Blog Hub</h2>
-    <!-- Blog Categories -->
-    <div class="blog-categories">
-        <a href="#" class="active">General Dentistry</a>
-        <a href="#">Cosmetic Dentistry</a>
-        <a href="#">Crowns & Bridges</a>
-        <a href="#">Nutrition</a>
-        <a href="#">Oral Surgery</a>
-        <a href="#">Root Canal</a>
-        <a href="#">Implants & Dentures</a>
+<!-- BLOG CONTAINER -->
+<div class="blog-container">
+    <div class="blog-header">
+      <div class="blog-title">
+        <h2>Journey Through Knowledge : Blog Hub</h2>
+        <p class="blog-categories">
+          <a href="#"><span>General Dentistry</span></a>
+          <a href="#">| Cosmetics Dentistry</a>
+          <a href="#">| Nutrition</a>
+          <a href="#">| Oral Surgery</a>
+          <a href="#">| Root Canal</a>
+          <a href="#">| Implants & Dentures</a>
+        </p>
+      </div>
     </div>
-
   
-    <!-- Blog List -->
-    <div class="blogs">
-
-        
-        <div class="blog-card">
-            <img src="assets/bloghub.png" height="100px" width="50px" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+    <div class="blog-content-row">
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
         </div>
-        <div class="blog-card">
-            <img src="assets/bloghub.png" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
         </div>
-        <div class="blog-card">
-            <img src="assets/bloghub.png" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+      </div>
+  
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
         </div>
-        <div class="blog-card">
-            <img src="assets/bloghub.png" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
         </div>
-        <div class="blog-card">
-            <img src="assets/bloghub.png" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+      </div>
+  
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
         </div>
-        <div class="blog-card">
-            <img src="assets/bloghub.png" alt="Blog image">
-            <h3>Dry Sockets Demystified: Understanding the connection to tooth extraction</h3>
-            <p>12th Feb 2024 | 2 min read</p>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
         </div>
+      </div>
+  
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
+        </div>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
+        </div>
+      </div>
+  
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
+        </div>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
+        </div>
+      </div>
+  
+      <div class="blog-card">
+        <div class="blog-img">
+          <img src="assets/Frame 51911.png" alt="Blog Image" />
+        </div>
+        <div class="blog-text">
+          <p>
+            <span>
+              Dry Sockets Demystified: <br />
+              Understanding the connection <br />
+              to tooth extraction
+            </span>
+          </p>
+          <p>12th Feb 2024 | 2min read</p>
+        </div>
+      </div>
     </div>
-
-    <!-- Pagination Arrows -->
-    <div class="pagination">
-        <span>&larr;</span>
-        <span>&rarr;</span>
+  
+    <div class="explore-more">
+      <img src="assets/Search.png" alt="Search Icon" id="img-search" />
+      <a class="exploremore" href="#">Explore More</a>
+      <img src="assets/Arrow 3.png" alt="Arrow Icon" id="img-arrow" />
     </div>
-</div>
+  </div>
+<!-- CORPORATE TRUST BANNER -->
+<div class="corporate-trust-banner">
+    <div class="banner-image-container">
+      <img src="assets/Rectangle 3037.png" alt="Hand Image" />
+    </div>
+    <div class="banner-content">
+      <div class="banner-text">
+        <h1>250+</h1>
+        <h3>Corporate Trust Us</h3>
+        <p>Check company in one of them & avail exclusive benefits</p>
+      </div>
+      <div class="trusted-companies">
+        <div class="company-logo">
+          <img src="assets/image 444.png" alt="Company Logo 1" />
+        </div>
+        <div class="company-logo">
+          <img
+            src="assets/5a393285c488ac6062ac2af9 1.png"
+            alt="Company Logo 2"
+          />
+        </div>
+        <div class="company-logo">
+          <img src="assets/image 445.png" alt="Company Logo 3" />
+        </div>
+        <div class="company-logo">
+          <img src="assets/pngegg (1) 1.png" alt="Company Logo 4" />
+        </div>
+        <div class="company-logo">
+          <img src="assets/pngegg 1.png" alt="Company Logo 5" />
+        </div>
+      </div>
+      <button class="btn-book">Book Appointment</button>
+      <div class="explore-more">
+        <img src="assets/Search.png" alt="Search Icon" id="img-search" />
+        <a href="#">Explore More</a>
+        <img src="assets/Arrow 3.png" alt="Arrow Icon" id="img-arrow" />
+      </div>
+    </div>
+  </div>
 
 <!-- Dentistry Section -->
 <section class="beyond-dentistry">

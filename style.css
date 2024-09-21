@@ -277,96 +277,79 @@ body {
 }
 
 
-/* FAQ Section */
-.faq-section {
-    max-width: 900px;
-    margin: 50px auto;
-    text-align: center;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.faq-section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: #333;
-}
+/* <---------------FAQ CONTAINER---------------> */
 
 .faq-container {
+    height: auto; 
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Content */
+  .faq-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .faq-title {
+    font-size: 30px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-questions {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-}
-
-.faq-column {
-    width: 45%;
-}
-
-.faq-item {
+  }
+  
+  /* Column */
+  .faq-column {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+  
+  /* FAQ Item */
+  .faq-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
     border-bottom: 1px solid #ddd;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.faq-item p {
-    font-size: 16px;
-    color: #333;
-}
-
-.plus {
-    font-size: 24px;
-    color: #f57c00;
-    font-weight: bold;
-}
-
-.faq-item:hover {
-    background-color: #f0f0f0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .nav-right {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .appointment-btn, .help-btn {
-        width: 100%;
-    }
-
-    .faq-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
+  }
+  
+  .faq-icon {
+    font-size: 25px;
+    color: #f8943f;
+  }
+  
+  /* Responsive Styles */
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
     .faq-column {
-        width: 100%;
+      flex: 1 1 calc(50% - 20px); 
+      max-width: calc(50% - 20px);
     }
-
-    .faq-item {
-        justify-content: space-between;
+  }
+  
+  /* For small screens (mobile) */
+  @media screen and (max-width: 767px) {
+    .faq-column {
+      flex: 1 1 100%;
+      max-width: 100%;
     }
-}
+  }
 
+  
 /* Beyond Dentistry Section */
 .beyond-dentistry {
     background-color: #fdf5ee;
